@@ -8,10 +8,10 @@ Change filter.
 Change completion.
 
 ## 20170308_yunxingribao
-运行日报自动化生成脚本
+日报自动化生成脚本
 
 ## 20170812_yunxingzhibiao
-运行指标自动化脚本
+指标自动化脚本
 
 ## 20201130_systemrestart
 System restart after a few seconds.

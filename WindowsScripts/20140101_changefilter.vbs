@@ -24,13 +24,13 @@ Function Record(ws,t, team,s)
    
    start = s
    Select Case t
-	  Case "应急":
+	  Case "t1":
 		 row = start
-	  Case "标准":
+	  Case "t2":
 		 row = start + 1
-	  Case "常规":
+	  Case "t3":
 		 row = start + 2
-	  Case "重大":
+	  Case "t4":
 		 row = start + 3
 	  Case Else:
 		 row = start + 4
@@ -42,27 +42,15 @@ Function Record(ws,t, team,s)
    start = row + 1
    
    Select Case team
-	  Case "应用支持":
+	  Case "team1":
 		 row = start
-		 var = "应用"
-	  Case "风险管理":
+		 var = "team1"
+	  Case "team2":
 		 row = start + 1
-		 var = "风险"
-	  Case "运行管理":
-		 row = start + 2
-		 var = "运行"
-	  Case "网络支持":
-		 row = start + 3
-		 var = "网络"
-	  Case "环境管理":
-		 row = start + 4
-		 var = "环境"
-	  Case "基础设施":
-		 row = start + 5
-		 var = "基础设施"
+		 var = "team2"
 	  Case Else:
 		 row = start + 6
-		 var = "未知团队"
+		 var = "unknown team"
    End Select
 
    ws.Cells(row,1).Value = team
@@ -78,7 +66,7 @@ Sub Filter()
    Dim start As Integer
    Dim team As String
    name = "C:\namelist.xlsx"
-   Set ws = ThisWorkbook.Worksheets(1) '导出变更列表的第一个表格
+   Set ws = ThisWorkbook.Worksheets(1)
    Set mws = Workbooks.Open(Filename:=name).Worksheets(1)
    i = 2
    start = ws.UsedRange.Rows.Count + 1
